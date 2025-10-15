@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otabek Motivatsiya Platformasi</title>
+<style>
+    body {
+        font-family: "Poppins", Arial, sans-serif;
+        background: linear-gradient(135deg, #ffcc33, #ff8800);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #333;
+    }
+
+    .container {
+        background: white;
+        padding: 35px;
+        border-radius: 25px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 350px;
+        transition: 0.4s;
+    }
+
+    h1 {
+        color: #ff9800;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #555;
+    }
+
+    button {
+        background-color: #ff9800;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 12px;
+        font-size: 16px;
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #e68900;
+        transform: scale(1.05);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 90%;
+        margin-top: 15px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-weight: 600;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 1-qadam: Obuna bo'lish sahifasi -->
+    <div id="subscribe-step">
+        <h1>👋 Salom, xush kelibsiz!</h1>
+        <p>Saytga kirish uchun quyidagi tarmoqlarga obuna bo‘l:</p>
+
+        <a href="https://instagram.com/otabek_3779" target="_blank" title="Mening Instagram sahifam">
+            <button>📸 Instagram-ga obuna bo‘lish</button>
+        </a>
+
+        <a href="https://t.me/realotabek" target="_blank" title="Mening Telegram kanalım">
+            <button>📢 Telegram-ga obuna bo‘lish</button>
+        </a>
+
+        <button id="continueBtn">✅ Obuna bo‘ldim</button>
+    </div>
+
+    <!-- 2-qadam: Asosiy motivatsiya sahifasi -->
+    <div id="main-content" class="hidden">
+        <h1>🎯 Maqsadingni yoz!</h1>
+        <p>O‘z orzuyingni yoz va boshlaymiz 🚀</p>
+
+        <input type="text" id="goalInput" placeholder="Masalan: Dasturchi bo‘lish">
+        <button onclick="showPlan()">Yuborish</button>
+        <p id="result"></p>
+    </div>
+</div>
+
+<script>
+    // Obuna bosilganda asosiy sahifani ko‘rsatish
+    document.getElementById("continueBtn").addEventListener("click", function() {
+        document.getElementById("subscribe-step").classList.add("hidden");
+        document.getElementById("main-content").classList.remove("hidden");
+    });
+
+    // Maqsadni chiqarish funksiyasi
+    function showPlan() {
+        let goal = document.getElementById("goalInput").value.trim();
+        let result = document.getElementById("result");
+
+        if (goal === "") {
+            result.textContent = "😅 Iltimos, maqsadingni yoz!";
+        } else {
+            result.textContent = `🔥 Ajoyib! ${goal} bo‘lish uchun har kuni 1 qadam tashla!`;
+        }
+    }
+</script>
+</body>
+</html>
+
